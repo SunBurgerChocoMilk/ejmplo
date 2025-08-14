@@ -1,6 +1,7 @@
-
+import useState from 'react';
 import React from 'react';
 function Login() {
+    const [mensaje, setmensaje] = useState('');
     return (
         <div>
             <h2>Iniciar Sesiòn</h2>

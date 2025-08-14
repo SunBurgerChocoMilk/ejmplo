@@ -1,21 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Perfil from './components/Perfil.jsx'
 import Register from './components/Register.jsx'
-
+import Login from './components/Login.jsx'
 
 function App() {
+  const [vista, setVista] = useState('register');
+
   return (
-    <>
-      <div>
-        <h1>Bienvenidos</h1>
-        <Register />
-        <Login />
-        <perfil />
-      </div>
-    </>
+    <div>
+      <h1>Bienvenidos</h1>
+      <button onClick={() => setVista('register')}>Registrarse</button>
+      <button onClick={() => setVista('login')}>Iniciar Sesión</button>
+      <br /><br />
+      {vista === 'register' && <Register />}
+      {vista === 'login' && <Login />}
+    </div>
   )
 }
 
